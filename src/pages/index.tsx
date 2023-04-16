@@ -1,16 +1,12 @@
 import type { GetServerSideProps } from 'next';
 import { getSession, signOut } from 'next-auth/react';
 import { useCurrentUser } from '../../hooks';
+import { Navbar } from '@/components';
 
 export default function Home() {
-	const { data: user } = useCurrentUser();
 	return (
 		<>
-			<h1 className='text-2xl'>Netlix Clone</h1>
-			<p>Logged in as : {user?.name}</p>
-			<button onClick={() => signOut()} className='h-10 w-full bg-white'>
-				Logout
-			</button>
+			<Navbar/>
 		</>
 	);
 }
