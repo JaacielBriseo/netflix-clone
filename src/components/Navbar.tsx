@@ -36,7 +36,7 @@ export const Navbar = () => {
 					showBackground ? 'bg-zinc-900 bg-opacity-90' : ''
 				} `}>
 				<Image
-					src='/images/logo.png'
+					src='/logo.png'
 					alt='Logo'
 					width={100}
 					height={100}
@@ -73,7 +73,7 @@ export const Navbar = () => {
 					<div onClick={toggleAccountMenu} className='flex flex-row items-center gap-2 cursor-pointer relative'>
 						<div className='w-6 h-6 lg:w-10 lg:h-10 rounded-md overflow-hidden'>
 							<Image
-								src='/images/default-slate.png'
+								src='/default-slate.png'
 								alt='Default'
 								width={1000}
 								height={1000}

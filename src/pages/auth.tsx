@@ -42,11 +42,11 @@ const AuthPage = () => {
 		}
 	}, [userData]);
 	return (
-		<div className="relative h-full w-full bg-[url('/images/hero.jpg')] bg-center bg-no-repeat bg-fixed bg-cover">
+		<div className="relative h-full w-full bg-[url('/hero.jpg')] bg-center bg-no-repeat bg-fixed bg-cover">
 			<div className='bg-black w-full h-full lg:bg-opacity-50'>
 				<nav className='px-12 py-5'>
 					<Image
-						src='/images/logo.png'
+						src='/logo.png'
 						alt='Logo'
 						width={100}
 						height={48}
