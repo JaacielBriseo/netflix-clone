@@ -1,11 +1,11 @@
 import { useCallback, useState } from 'react';
 import type { GetServerSideProps } from 'next';
-import Image from 'next/image';
 import { getSession, signIn } from 'next-auth/react';
+import Image from 'next/image';
 import axios from 'axios';
-import { Input } from '@/components/Input';
 import { FcGoogle } from 'react-icons/fc';
 import { FaGithub } from 'react-icons/fa';
+import { Input } from '@/components/Input';
 
 const AuthPage = () => {
 	const [userData, setUserData] = useState({

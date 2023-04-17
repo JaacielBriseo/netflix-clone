@@ -1,8 +1,8 @@
 import type { GetServerSideProps } from 'next';
-import { getSession } from 'next-auth/react';
-import Image from 'next/image';
-import { useCurrentUser } from '../../hooks';
 import { useRouter } from 'next/router';
+import Image from 'next/image';
+import { getSession } from 'next-auth/react';
+import { useCurrentUser } from '../../hooks';
 
 const ProfilesPage = () => {
 	const router = useRouter();

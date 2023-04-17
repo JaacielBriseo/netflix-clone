@@ -1,7 +1,7 @@
-import axios from 'axios';
 import { useCallback, useMemo } from 'react';
-import { useCurrentUser, useFavorites } from '../../hooks';
+import axios from 'axios';
 import { AiOutlinePlus, AiOutlineCheck } from 'react-icons/ai';
+import { useCurrentUser, useFavorites } from '../../hooks';
 
 interface Props {
 	movieId: string;
