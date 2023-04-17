@@ -9,10 +9,13 @@ interface Props {
 export const MovieCard: React.FC<Props> = ({ movie }) => {
 	return (
 		<div className='group bg-zinc-900 col-span relative h-[12vw]'>
-			<img
+			<Image
 				src={movie.thumbnailUrl}
 				alt='Movie'
 				draggable={false}
+				width={0}
+				height={0}
+				sizes='100vw'
 				className='cursor-pointer
       object-cover
       transition
@@ -44,11 +47,14 @@ export const MovieCard: React.FC<Props> = ({ movie }) => {
       group-hover:translate-x-[2vw]
       group-hover:opacity-100
     '>
-				<img
+				<Image
 					// onClick={redirectToWatch}
 					src={movie.thumbnailUrl}
 					alt='Movie'
 					draggable={false}
+					width={0}
+					height={0}
+					sizes='100vw'
 					className='
           cursor-pointer
         object-cover
