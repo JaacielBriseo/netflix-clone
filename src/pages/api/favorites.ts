@@ -1,7 +1,8 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import prismadb from '../../../../lib/prismadb';
-import serverAuth from '../../../../lib/serverAuth';
+import serverAuth from '../../../lib/serverAuth';
+import prismadb from '../../../lib/prismadb';
 import { Movie } from '@prisma/client';
+
 type Data =
 	| {
 			message: string;
@@ -11,18 +12,24 @@ type Data =
 export default function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
 	switch (req.method) {
 		case 'GET':
-			return getMovies(req, res);
+			return getFavorites(req, res);
 
 		default:
 			return res.status(400).json({ message: 'Bad request.' });
 	}
 }
 
-const getMovies = async (req: NextApiRequest, res: NextApiResponse<Data>) => {
+const getFavorites = async (req: NextApiRequest, res: NextApiResponse<Data>) => {
 	try {
-		await serverAuth(req,res);
-		const movies = await prismadb.movie.findMany();
-		return res.status(200).json(movies);
+		const { currentUser } = await serverAuth(req,res);
+		const favoriteMovies = await prismadb.movie.findMany({
+			where: {
+				id: {
+					in: currentUser.favoriteIds,
+				},
+			},
+		});
+		return res.status(200).json(favoriteMovies);
 	} catch (error) {
 		console.log(error);
 		return res.status(500).json({ message: 'Some error occur.' });

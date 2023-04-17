@@ -1,16 +1,18 @@
 import type { GetServerSideProps } from 'next';
 import { getSession } from 'next-auth/react';
-import { useMovieList } from '../../hooks';
+import { useFavorites, useMovieList } from '../../hooks';
 import { Billboard, MovieList, Navbar } from '@/components';
 
 export default function Home() {
 	const { data: movies = [] } = useMovieList();
+	const {data:favorites = []} = useFavorites() 
 	return (
 		<>
 			<Navbar />
 			<Billboard />
 			<div className='pb-40'>
 				<MovieList title='Trending now' movies={movies} />
+				<MovieList title='My List' movies={favorites} />
 			</div>
 		</>
 	);

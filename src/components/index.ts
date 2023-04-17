@@ -1,3 +1,4 @@
+export { FavoriteButton } from './FavoriteButton';
 export { AccountMenu } from './AccountMenu';
 export { Billboard } from './Billboard';
 export { Input } from './Input';
