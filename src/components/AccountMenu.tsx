@@ -15,7 +15,7 @@ export const AccountMenu: React.FC<Props> = ({ visible }) => {
 			<div className='flex flex-col gap-3'>
 				<div className='px-3 group/item flex flex-row gap-3 items-center w-full'>
 					<Image
-						src='/images/default-slate.png'
+						src='/default-slate.png'
 						alt='Default'
 						width={1000}
 						height={1000}
