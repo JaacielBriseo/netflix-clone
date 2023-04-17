@@ -1,12 +1,12 @@
 import type { GetServerSideProps } from 'next';
-import { getSession, signOut } from 'next-auth/react';
-import { useCurrentUser } from '../../hooks';
-import { Navbar } from '@/components';
+import { getSession } from 'next-auth/react';
+import { Billboard, Navbar } from '@/components';
 
 export default function Home() {
 	return (
 		<>
-			<Navbar/>
+			<Navbar />
+			<Billboard />
 		</>
 	);
 }
